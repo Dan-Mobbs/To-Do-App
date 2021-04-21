@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import Todo from './Todo';
 import Todoform from './Todoform'
+import { GrDocumentTxt } from 'react-icons/gr'
+import { Container, Row } from 'react-bootstrap';
 
 function Todolist() {
     const [todos, setTodos] = useState([]);
@@ -15,19 +17,19 @@ function Todolist() {
         setTodos(newTodos);
     };    
 
-    const updateTodo = (todoI, newValue) => {
-        if(!todo.text || /^\s*$/.test(todo.text)) {
+    const updateTodo = (todoId, newValue) => {
+        if(!newValue.text || /^\s*$/.test(newValue.text)) {
             return;
         }
-        
-        setTodos(prev => prev.map(item => (item.id === todoIt ? newValue : item)))
-    }    
+
+        setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)));
+    };    
 
     const removeTodo = id => {
         const removeArr = [...todos].filter(todo => todo.id !==id)
 
         setTodos(removeArr)
-    }
+    };
 
     const completeTodo = id => {
         let updatedTodos = todos.map(todo => {
@@ -39,11 +41,17 @@ function Todolist() {
         setTodos(updatedTodos);
     };
 
+    const style = { color: "pink", fontSize: "1.2em", margin: "20px" }
+
     return (
-        <div>
-            <h1>Whats is your plan for today?</h1>
+        <div className="py-5 text-center app-bg">
+            <h1 className="text-dark">Whats is your plan for today?</h1>
             <Todoform onSubmit={addTodo} />
-            <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo}/>
+            <Container>
+                <Row >
+                    <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} updateTodo={updateTodo} />
+                </Row>
+            </Container>
         </div>
     )
 }

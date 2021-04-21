@@ -1,11 +1,14 @@
+import { Container } from 'react-bootstrap';
 import './App.css';
 import Todolist from './components/Todolist';
 
 function App() {
   return (
-    <div className="todo-app">
+    <>
+      <Container>
         <Todolist />
-    </div>
+      </Container>  
+    </>
   );
 }
 

@@ -1,0 +1,58 @@
+/* Custom CSS Code */
+body {
+    color: #444;
+    background-color: #ddd;
+}
+
+/*Item*/
+.item {
+    background-color: #43aa8b;
+    border-bottom: solid #fff 1px;
+    color: #fff;
+    font-size: 26px;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: none;
+    font-weight: bold;
+}
+
+/*Input*/
+.form-control::placeholder {
+    color: #444!important;
+}
+
+input[type=text] {
+    padding: 25px 15px;
+    border-radius: 0;
+}
+.btn {
+    border-radius: 0;
+}
+
+.complete {
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+/*Btn*/
+.update-form {
+    background-color: #f3722c;
+}
+.update-form:hover {
+    background-color: #f9c74f;
+}
+.add-form {
+    background-color: #90be6d;
+}
+.add-form:hover {
+    background-color: #277da1;
+}
+
+/*Icons*/
+.edit-icon {
+    font-size: 26px;
+    margin-left: 25px;
+}
+.delete-icon {
+    font-size: 26px;    
+}
